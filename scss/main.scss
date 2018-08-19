@@ -1,4 +1,5 @@
 @import "config";
+@import "menu";
 
 * {
   box-sizing: border-box;
@@ -36,7 +37,7 @@ a {
   text-decoration: none;
 }
 header {
-  position: fixed;
+  // position: fixed;
   //bigger and closer to you
   z-index: 2;
 }

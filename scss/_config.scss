@@ -15,7 +15,7 @@ $background-opacity: 0.9;
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
-
+      //pseudo element
       &:after {
         content: "";
         position: absolute;
