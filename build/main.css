@@ -157,8 +157,8 @@ main {
   main#home {
     position: absolute;
     padding: 0px;
-    left: 9rem;
-    top: 15rem;
+    left: calc(100% - 97%);
+    top: calc(100% - 70%);
     height: 40%; }
     main#home h1 {
       margin-top: 1vh; }
@@ -283,7 +283,10 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main#home {
+    top: calc(100% - 88%); }
+    main#home h1 {
+      margin-top: 10vh;
+      top: calc(100% - 88%); }
   .projects {
     grid-template-columns: 1fr; } }

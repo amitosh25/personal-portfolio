@@ -78,8 +78,8 @@ main {
   &#home {
     position: absolute;
     padding: 0px;
-    left: 9rem;
-    top: 15rem;
+    left: calc(100% - 97%);
+    top: calc(100% - 70%);
     height: 40%;
     h1 {
       //view port height

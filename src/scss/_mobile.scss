@@ -60,8 +60,13 @@
 }
 // Mobile
 @include mediaSm {
-  main#home h1 {
-    margin-top: 10vh;
+  main#home {
+    top: calc(100% - 88%);
+
+    h1 {
+      margin-top: 10vh;
+      top: calc(100% - 88%);
+    }
   }
   .projects {
     grid-template-columns: 1fr;
