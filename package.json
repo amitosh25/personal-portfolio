@@ -2,17 +2,40 @@
   "name": "my_folio",
   "version": "1.0.0",
   "description": "My Responsive portfolio website.",
-  "main": "index.js",
+  "main": "app.js",
   "homepage": "https://amitosh25.github.io/personal_portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist -o github"
+    "sass": "node-sass -w src/scss/ -o build/ --recursive",
+    "deploy": "gh-pages -d dist -o github",
+    "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
+    "build": "webpack --mode production --progress"
   },
-  "keywords": ["Amitosh", "Mishra", "java", "fullstack", "engineer", "Amitosh"],
+  "keywords": [
+    "Amitosh",
+    "Mishra",
+    "java",
+    "fullstack",
+    "engineer",
+    "Amitosh"
+  ],
   "author": "Amitosh Mishra",
   "license": "MIT",
   "dependencies": {
     "gh-pages": "^1.2.0",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "particles.js": "^2.0.0",
+    "requirejs": "^2.3.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "exports-loader": "^0.7.0",
+    "json-loader": "^0.5.7"
   }
 }
