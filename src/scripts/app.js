@@ -1,4 +1,5 @@
 import particles from "particles.js";
+import "../scss/main.scss";
 
 // Select DOM Items
 const menuBtn = document.querySelector(".menu-btn");
@@ -6,6 +7,8 @@ const menu = document.querySelector(".menu");
 const menuBranding = document.querySelector(".menu-branding");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
+const home = document.querySelector("#home");
+const particlejs = document.querySelector("#particles-js");
 
 const json = require("../assets/external/particle.json");
 
@@ -74,7 +77,9 @@ window.onload = function() {
 
 menuBtn.addEventListener("click", toggleMenu);
 
-particlesJS("particles-js", json);
+if (particlejs) {
+  particlesJS("particles-js", json);
+}
 
 function toggleMenu() {
   if (!showMenu) {
@@ -82,6 +87,9 @@ function toggleMenu() {
     menu.classList.add("show");
     menuNav.classList.add("show");
     menuBranding.classList.add("show");
+    if (home) {
+      home.classList.add("hideElement");
+    }
     navItems.forEach(item => item.classList.add("show"));
     showMenu = true;
   } else {
@@ -89,6 +97,9 @@ function toggleMenu() {
     menu.classList.remove("show");
     menuNav.classList.remove("show");
     menuBranding.classList.remove("show");
+    if (home) {
+      home.classList.remove("hideElement");
+    }
     navItems.forEach(item => item.classList.remove("show"));
     showMenu = false;
   }

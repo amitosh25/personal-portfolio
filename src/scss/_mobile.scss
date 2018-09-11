@@ -20,6 +20,7 @@
     .lg-heading {
       line-height: 1;
       margin-bottom: 1rem;
+      font-size: 4rem;
     }
   }
 
@@ -44,7 +45,7 @@
     transform: translate3d(100%, 0, 0);
 
     .portrait {
-      background: red;
+      background: url(../assets/img/profile_sm.jpg);
       width: 150px;
       height: 150px;
     }
@@ -60,12 +61,9 @@
 }
 // Mobile
 @include mediaSm {
-  main#home {
-    top: calc(100% - 88%);
-
+  main {
     h1 {
       margin-top: 10vh;
-      top: calc(100% - 88%);
     }
   }
   .projects {

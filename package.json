@@ -5,10 +5,9 @@
   "main": "app.js",
   "homepage": "https://amitosh25.github.io/personal_portfolio",
   "scripts": {
-    "sass": "node-sass -w src/scss/ -o build/ --recursive",
     "deploy": "gh-pages -d dist -o github",
-    "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
-    "build": "webpack --mode production --progress"
+    "build": "webpack-dev-server --mode development",
+    "build:prod": "webpack --mode production --progress"
   },
   "keywords": [
     "Amitosh",
@@ -22,20 +21,33 @@
   "license": "MIT",
   "dependencies": {
     "gh-pages": "^1.2.0",
-    "node-sass": "^4.9.3",
     "particles.js": "^2.0.0",
-    "requirejs": "^2.3.6",
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
-  },
-  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
     "exports-loader": "^0.7.0",
-    "json-loader": "^0.5.7"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-md5-hash": "0.0.6"
   }
 }
