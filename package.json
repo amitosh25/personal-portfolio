@@ -9,7 +9,7 @@
     "build": "webpack-dev-server --mode development",
     "prod": "webpack --mode production --progress",
     "heroku-prebuild": "npm install --production=false",
-    "heroku-postbuild": "prod build/index.html"
+    "heroku-postbuild": "npm run prod build/index.html"
   },
   "keywords": [
     "Amitosh",
