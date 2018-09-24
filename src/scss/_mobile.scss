@@ -3,11 +3,17 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+    #skill-bars {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktop
 @include mediaLg {
   .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+    #skill-bars {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -22,6 +28,11 @@
       margin-bottom: 1rem;
       font-size: 4rem;
     }
+  }
+    #download-button{
+     top: 20px;
+    float: none;
+    right: calc(100% - 85%);
   }
 
   ul.menu-nav,
@@ -58,6 +69,9 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+    #skill-bars {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 // Mobile
 @include mediaSm {
@@ -68,5 +82,13 @@
   }
   .projects {
     grid-template-columns: 1fr;
+  }
+  #skill-bars {
+    grid-template-columns: 1fr;
+  }
+  #download-button{
+    top: calc(100% - 90px);
+    float: none;
+    right: calc(100% - 77%);
   }
 }

@@ -75,8 +75,8 @@ module.exports = {
       template: "./src/html/contact.html"
     }),
     new HtmlWebpackPlugin({
-      filename: "work.html",
-      template: "./src/html/work.html"
+      filename: "skill.html",
+      template: "./src/html/skill.html"
     }),
     new CleanWebpackPlugin(["build"]),
     new WebpackMd5Hash()

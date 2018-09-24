@@ -10,11 +10,12 @@
     <link href="build.app.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="src/assets/img/favicon.png">
 </head>
-<title>About Me</title>
+<title>My Skills</title>
 </head>
 
 <body>
     <header>
+        <div><i class="fas fa-file-download"></i></div>
         <div class="menu-btn">
             <div class="btn-line"></div>
             <div class="btn-line"></div>
@@ -28,11 +29,11 @@
                 <li class="nav-item">
                     <a href="." class="nav-link">Home</a>
                 </li>
-                <li class="nav-item current">
+                <li class="nav-item ">
                     <a href="./about.html" class="nav-link">About me</a>
                 </li>
-                <li class="nav-item">
-                    <a href="./skill.html" class="nav-link">My Skills</a>
+                <li class="nav-item current">
+                    <a href="./skill.html" class="nav-link">My Skill</a>
                 </li>
                 <li class="nav-item">
                     <a href="./contact.html" class="nav-link">Reach Me</a>
@@ -40,39 +41,35 @@
             </ul>
         </nav>
     </header>
-    <main id="about">
-        <h1 class="lg-heading">About <span class="text-secondary">Me</span></h1>
-        <h2 class="sm-heading">Let me tell you few things </h2>
-        <div class="about-info">
-            <img src="../assets/img/profile.jpg" alt="Amitosh Mishra" class="bio-image">
-            <div class="bio">
-                <h3 class="text-secondary">BIO</h3>
-                <p>I am a 5+ Year experienced Developer who has the technical knowhow and edge to create production code. Currently
-                    delving into Full Stack Software Engineering.
-                </p>
+    <main id="skill">
+        <h1 class="lg-heading">My <span class="text-secondary">Skills</span></h1>
+        <h2 class="sm-heading">Skills which i have gained till now</h2>
+        <div id="skill-bars">
+            <div class="bar" data-percent="80">
+                <h3>Java</h3>
+                <canvas class="bar-circle" width="70" height="70"></canvas>
             </div>
-            <div class="job job-1">
-                <h3>JDA Software</h3>
-                <h6>Senior Software Engineer(Current) </h6>
-                <p>WMS product development team</p>
+            <div class="bar" data-percent="60">
+                <h3>JavaScript</h3>
+                <canvas class="bar-circle" width="70" height="70"></canvas>
             </div>
-            <div class="job job-2">
-                <h3>Sears Holdings India</h3>
-                <h6>Technical Associate</h6>
-                <p>Product Search team for Sears.com ECOM</p>
+            <div class="bar" data-percent="60">
+                <h3>Angular</h3>
+                <canvas class="bar-circle" width="70" height="70"></canvas>
             </div>
-            <div class="job job-3">
-                <h3>Iron Mountain India</h3>
-                <h6>Software Engineer</h6>
-                <p>DMS Development Team</p>
+            <div class="bar" data-percent="60">
+                <h3>Microservices</h3>
+                <canvas class="bar-circle" width="70" height="70"></canvas>
+            </div>
+            <div class="bar" data-percent="70">
+                <h3>SQL</h3>
+                <canvas class="bar-circle" width="70" height="70"></canvas>
             </div>
         </div>
-
     </main>
     <footer id="main-footer">
         Copyright &copy; 2018
     </footer>
-
     <script type="text/javascript" src="build.app.js"></script>
 </body>
 
