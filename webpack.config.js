@@ -63,20 +63,20 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: "./src/html/index.html",
+      template: "src/html/index.html",
       filename: "index.html"
     }),
     new HtmlWebpackPlugin({
       filename: "about.html",
-      template: "./src/html/about.html"
+      template: "src/html/about.html"
     }),
     new HtmlWebpackPlugin({
       filename: "contact.html",
-      template: "./src/html/contact.html"
+      template: "src/html/contact.html"
     }),
     new HtmlWebpackPlugin({
       filename: "skill.html",
-      template: "./src/html/skill.html"
+      template: "src/html/skill.html"
     }),
     new CleanWebpackPlugin(["build"]),
     new WebpackMd5Hash()

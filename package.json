@@ -9,7 +9,7 @@
     "build": "webpack-dev-server --mode development",
     "prod": "webpack --mode production --progress",
     "heroku-prebuild": "npm install --production=false",
-    "heroku-postbuild": "npm run prod build/index.html"
+    "heroku-postbuild": "npm run prod"
   },
   "keywords": [
     "Amitosh",
@@ -22,6 +22,7 @@
   "author": "Amitosh Mishra",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.3",
     "gh-pages": "^1.2.0",
     "particles.js": "^2.0.0",
     "requirejs": "^2.3.6"
