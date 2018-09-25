@@ -4,8 +4,6 @@ import Home from './home';
 import Skills from './skills';
 import '../scss/main.scss';
 
-require('../assets/img/favicon.png');
-
 const json = require('../assets/external/particle.json');
 
 const particlejs = document.querySelector('#particles-js');

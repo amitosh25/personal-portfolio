@@ -37,7 +37,7 @@ module.exports = {
         use: ["html-loader"]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|jpe?g|svg)$/i,
         use: [
           "file-loader",
           {
@@ -61,22 +61,24 @@ module.exports = {
       filename: "build.app.css"
     }),
     new HtmlWebpackPlugin({
-      inject: false,
-      hash: true,
       template: "src/html/index.html",
-      filename: "index.html"
+      filename: "index.html",
+      favicon: 'src/assets/img/favicon.png',
     }),
     new HtmlWebpackPlugin({
       filename: "about.html",
-      template: "src/html/about.html"
+      template: "src/html/about.html",
+      favicon: 'src/assets/img/favicon.png',
     }),
     new HtmlWebpackPlugin({
       filename: "contact.html",
-      template: "src/html/contact.html"
+      template: "src/html/contact.html",
+      favicon: 'src/assets/img/favicon.png',
     }),
     new HtmlWebpackPlugin({
       filename: "skill.html",
-      template: "src/html/skill.html"
+      template: "src/html/skill.html",
+      favicon: 'src/assets/img/favicon.png',
     }),
     new CleanWebpackPlugin(["build"]),
     new WebpackMd5Hash()
