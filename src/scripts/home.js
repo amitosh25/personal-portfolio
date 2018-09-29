@@ -1,63 +1,57 @@
 export default class Home {
-  constructor() {
-    this.elements = document.getElementsByClassName('txt-rotate');
-  }
-
-  static init(el, toRotate, period) {
-    this.toRotate = toRotate;
+  init(el, words, wait) {
+    this.words = words;
     this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
     this.txt = '';
-    Home.tick();
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
     this.isDeleting = false;
   }
+  /*
+   Get current word
+   Check if deleting remove char from text else add char
+   */
 
-  static tick() {
-    const i = this.loopNum % this.toRotate.length;
-    const fullTxt = this.toRotate[i];
-
+  type() {
+    const current = this.wordIndex % this.words.length;
+    const fullTxt = this.words[current];
     if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
+    this.el.innerHTML = `<span class="typing">${this.txt} </span>`;
 
-    this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
-
-    const that = this;
-    let delta = 200 - Math.random() * 200;
+    // Manage speed
+    let typeSpeed = 100;
 
     if (this.isDeleting) {
-      delta /= 2;
+      typeSpeed /= 2;
     }
 
     if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
+      // pause at delete end
+
+      typeSpeed = this.wait;
       this.isDeleting = true;
     } else if (this.isDeleting && this.txt === '') {
+      // Deleted full word now change it .
       this.isDeleting = false;
-      this.loopNum += 1;
-      delta = 500;
+      this.wordIndex += 1;
     }
 
     setTimeout(() => {
-      that.tick();
-    }, delta);
+      this.type();
+    }, typeSpeed);
   }
 
   loadTyping() {
-    for (let i = 0; i < this.elements.length; i++) { // eslint-disable-line no-plusplus
-      const toRotate = this.elements[i].getAttribute('data-rotate');
-      const period = this.elements[i].getAttribute('data-period');
-      if (toRotate) {
-        Home.init(this.elements[i], JSON.parse(toRotate), period);
-      }
+    const txtElement = document.querySelector('.txt-type');
+    const words = JSON.parse(txtElement.getAttribute('data-word'));
+    const wait = txtElement.getAttribute('data-period');
+    if (words) {
+      this.init(txtElement, words, wait);
     }
-
-    const css = document.createElement('style');
-    css.type = 'text/css';
-    css.innerHTML = '.txt-rotate > .wrap { border-right: 0.08em solid #000; padding: 0 5px; }';
-    document.body.appendChild(css);
   }
 }

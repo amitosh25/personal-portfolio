@@ -227,6 +227,20 @@ main {
     }
   }
 }
+// Typing cursor
+.txt-type > .typing {
+  border-right: 0.08em solid #777; 
+  padding: 0 5px; 
+}
+//Add blinking cursor
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #777; 
+  }
+}
 
 #main-footer {
   text-align: center;

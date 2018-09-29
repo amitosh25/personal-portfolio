@@ -19,7 +19,7 @@ if (particlejs) {
 const menu = new Menu();// eslint-disable-line no-new
 menuBtn.addEventListener('click', evt => menu.toggleMenu(evt));
 // downloadDiv.addEventListener('click', evt => menu.onDownloadDivClick(evt));
-window.addEventListener('load', (evt) => {
+document.addEventListener('DOMContentLoaded', (evt) => {
   if (homeDiv) {
     const home = new Home();
     home.loadTyping(evt);

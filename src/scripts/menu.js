@@ -25,7 +25,7 @@ export default class Menu {
 
   toggleMenu() {
     const home = document.querySelector('#home');
-    const downloadDiv = document.querySelector('#download-button');
+    // const downloadDiv = document.querySelector('#download-button');
     let show = ''; /*eslint-disable-line*/
 
     if (!this.showMenu) {
@@ -36,14 +36,14 @@ export default class Menu {
       this.navItems.forEach(item => item.classList.add('show'));
       this.showMenu = true;
       show = home ? home.classList.add('hideElement') : '';
-      downloadDiv.classList.add('hideElement');
+      // downloadDiv.classList.add('hideElement');
     } else {
       this.menuBtn.classList.remove('close');
       this.menu.classList.remove('show');
       this.menuNav.classList.remove('show');
       this.menuBranding.classList.remove('show');
       this.navItems.forEach(item => item.classList.remove('show'));
-      downloadDiv.classList.remove('hideElement');
+      // downloadDiv.classList.remove('hideElement');
       show = home ? home.classList.remove('hideElement') : '';
       this.showMenu = false;
     }
