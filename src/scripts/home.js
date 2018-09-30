@@ -21,7 +21,7 @@ export default class Home {
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-    this.el.innerHTML = `<span class="typing">${this.txt} </span>`;
+    this.el.innerHTML = `<span class="typing">${this.txt}</span>`;
 
     // Manage speed
     let typeSpeed = 100;
@@ -29,9 +29,12 @@ export default class Home {
     if (this.isDeleting) {
       typeSpeed /= 2;
     }
-
+    const typElement = document.querySelector('.typing');
     if (!this.isDeleting && this.txt === fullTxt) {
       // pause at delete end
+
+      typElement.classList.remove('typing');
+      typElement.innerHTML = `<span>${this.txt}<span class="blinking-cursor">|</span></span>`;
 
       typeSpeed = this.wait;
       this.isDeleting = true;

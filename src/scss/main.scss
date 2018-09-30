@@ -229,15 +229,21 @@ main {
 }
 // Typing cursor
 .txt-type > .typing {
-  border-right: 0.08em solid #777; 
-  padding: 0 5px; 
+  border-right: 0.08em solid #777;
+  padding-left: 0px;
+  padding-right: 19px;
+
+
 }
-//Add blinking cursor
+
+.blinking-cursor {
+  animation: 0.5s blink step-end infinite;
+}
 @keyframes blink {
   from, to {
     color: transparent;
   }
-  50% {
+  30% {
     color: #777; 
   }
 }
