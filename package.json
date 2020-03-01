@@ -22,8 +22,8 @@
   "author": "Amitosh Mishra",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3",
-    "gh-pages": "^1.2.0",
+    "express": "^4.17.1",
+    "gh-pages": "^2.2.0",
     "particles.js": "^2.0.0",
     "requirejs": "^2.3.6"
   },
