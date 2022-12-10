@@ -22,7 +22,7 @@
   "author": "Amitosh Mishra",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "gh-pages": "^2.2.0",
     "particles.js": "^2.0.0",
     "requirejs": "^2.3.6"
