@@ -1,0 +1,128 @@
+// Todo this is not used currently download button and effect for resume download
+
+$font:'Source Sans Pro', sans-serif;
+$primary:#333333;
+$second:#fff;
+
+$cubic:all .5s cubic-bezier(0.77, 0, 0.175, 1);
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+@mixin filter($filter-type,$filter-amount) { 
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes loading {
+  0%{
+    width:0%;
+  }
+  40%{
+    width:30%;
+  }
+  50%{
+    width:50%;
+  }
+  80%{
+    width:77%;
+  }
+  100%{
+    width:100%;
+  }
+}
+
+@keyframes loading {
+  0%{
+    width:0%;
+  }
+  40%{
+    width:30%;
+  }
+  50%{
+    width:50%;
+  }
+  80%{
+    width:77%;
+  }
+  100%{
+    width:100%;
+  }
+}
+
+a {
+  &.finished {
+    color:$second;
+  }
+  color:#FFF;
+  text-decoration:none;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+
+#download-button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: absolute;
+  z-index: 3;
+  right: calc(100% - 90%);
+  top: 20px;
+  float: right;
+}
+
+.downloadButton {
+  height:50px;
+  line-height:50px;
+  width:200px;
+  text-align:center;
+  border-radius:4px;
+  color:#ddd;
+  font-size:18px;
+  background-color:$primary;
+  position:relative;
+  overflow:hidden;
+  //@include transition($cubic);
+  &:before {
+    content:'';
+    position:absolute;
+    left:0;
+    width:0;
+    top:0;
+    bottom:0;
+    height:100%;
+    background:$primary;
+  }
+  &.loading {
+    height:3px;
+    padding:0px 35px;
+    background-color:#DDD;
+    &:before {
+      animation:loading 4s forwards .4s;
+      -webkit-animation:loading 4s forwards .4s;
+    }
+  }
+  &.finished {
+    background-color:transparent;
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(51,51,51,1);
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(51,51,51,1);
+    box-shadow: inset 0px 0px 0px 2px rgba(51,51,51,1);
+  }
+}
